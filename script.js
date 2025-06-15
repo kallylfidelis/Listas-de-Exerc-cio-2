@@ -1,20 +1,28 @@
-var numeroPessoas = document.querySelector ("#numeroPessoas")
+var inputNum1 = document.querySelector ("#inputNum1")
+var inputNum2 = document.querySelector ("#inputNum2")
 var btCalcular = document.querySelector ("#btCalcular")
 var h3Resultado = document.querySelector ("#h3Resultado")
 
-function quantasPessoas() {
-    var pessoas = Number (numeroPessoas.value)
 
-    if (pessoas <= 0){
-        h3Resultado.textContent = "Resultado inválido"
-    }
+function doisNumeros() {
+    var primeiroNumero = Number (inputNum1.value)
+    var segundoNumero = Number (inputNum2.value)
 
 
-    var numOvos = pessoas * 2
-    var numQueijo = pessoas * 50
-    h3Resultado.textContent = `para ${pessoas} pessoas, você precisará de ${numOvos} ovos e ${numQueijo} gramas de queijo.`
+    var soma = primeiroNumero + segundoNumero
+    var subtracao = primeiroNumero - segundoNumero
+    var multiplicacao = primeiroNumero * segundoNumero
+    var divisao = primeiroNumero / segundoNumero
+
+    h3Resultado.innerHTML = `
+        Soma: ${soma}<br>
+        Subtração: ${subtracao}<br>
+        Multiplicação: ${multiplicacao}<br>
+        Divisão: ${divisao}
+       ` 
 }
 
+
 btCalcular.onclick = function() {
-    quantasPessoas()
+    doisNumeros()
 }
