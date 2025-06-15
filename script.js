@@ -1,28 +1,28 @@
-var inputNum1 = document.querySelector ("#inputNum1")
-var inputNum2 = document.querySelector ("#inputNum2")
-var btCalcular = document.querySelector ("#btCalcular")
-var h3Resultado = document.querySelector ("#h3Resultado")
+var sabor1 = document.querySelector("#sabor1");
+var sabor2 = document.querySelector("#sabor2");
+var sabor3 = document.querySelector("#sabor3");
+var sabor4 = document.querySelector("#sabor4");
+var quantidadeRefrigerantes = document.querySelector("#quantidadeRefrigerantes");
+var btCalcular = document.querySelector("#btCalcular");
+var h3Resultado = document.querySelector("#h3Resultado");
 
+function calcularTotal() {
+    var sabores = [
+        sabor1.value,
+        sabor2.value,
+        sabor3.value,
+        sabor4.value
+    ];
 
-function doisNumeros() {
-    var primeiroNumero = Number (inputNum1.value)
-    var segundoNumero = Number (inputNum2.value)
-
-
-    var soma = primeiroNumero + segundoNumero
-    var subtracao = primeiroNumero - segundoNumero
-    var multiplicacao = primeiroNumero * segundoNumero
-    var divisao = primeiroNumero / segundoNumero
+    var totalPizzas = 12 * sabores 
+    var totalRefrigerantes = 7 * Number(quantidadeRefrigerantes.value); 
 
     h3Resultado.innerHTML = `
-        Soma: ${soma}<br>
-        Subtração: ${subtracao}<br>
-        Multiplicação: ${multiplicacao}<br>
-        Divisão: ${divisao}
-       ` 
+        Sabores escolhidos: ${sabores.join(", ")}<br>
+        Total a pagar: R$ ${total.toFixed(2)}
+    `;
 }
 
-
 btCalcular.onclick = function() {
-    doisNumeros()
+    calcularTotal();
 }
